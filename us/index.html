@@ -1,0 +1,52 @@
+---
+layout: base
+---
+<h1>Us</h1>
+<p>
+  This is a <b>secret</b> page just for us (Loose Chippings Band Members).
+</p>
+
+<h2></h2>
+<table  class="sortable">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Artist</th>
+      <th>Lead</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for song in site.data.repertoire %}
+      {% if song.ready == "no" and song.lead != "Pete" %}
+        <tr>
+          <td>{{ song.title }}</td>
+          <td>{{ song.artist }}</td>
+          <td>{{ song.lead }}</td>
+        </tr>
+      {% endif %}
+    {% endfor %}
+  </tbody>
+</table>
+
+<h2>Songs Only Pete Knows</h2>
+<table class="sortable">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Artist</th>
+      <th>Ready</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% assign songs = site.data.repertoire | sort:"ready" | reverse %}
+    {% for song in songs %}
+      {% if song.lead == "Pete" %}
+        <tr>
+          <td>{{ song.title }}</td>
+          <td>{{ song.artist }}</td>
+          <td>{{ song.ready }}</td>
+        </tr>
+      {% endif %}
+    {% endfor %}
+  </tbody>
+</table>

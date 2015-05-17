@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <title></title>
+
+    <link rel="stylesheet" href="/assets/css/fonts.css" media="screen" type="text/css">
+    <link rel="stylesheet" href="/assets/css/global.css" media="screen" type="text/css">
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        <div class="sign">
+          <div class="inner">
+          </div>
+        </div>
+        
+        <a href="/">Loose Chippings</a>
+      </div>
+    </div>
+    <div class="site">
+      <div class="container">
+        <!-- <ul>
+          <li><a href="/repertoire/">Repertoire</a></li>
+        </ul> -->
+        {{ content }}
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.21.5/js/jquery.tablesorter.min.js"></script>
+    <script src="/assets/js/global.js"></script>
+    {% if page.customScripts %}
+      {% for script in page.customScripts %}
+        <script src="{{ script }}"></script>
+      {% endfor %}
+    {% endif %}
+  </body>
+</html>
