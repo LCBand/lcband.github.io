@@ -6,6 +6,7 @@ $.fn.searchable = () ->
   $html = $('html')
   $overlay = $('<div/>', {
     id: 'searchable-overlay'
+    class: 'print-hide'
   })
   $input = $('<input/>', {
     type: 'text'
