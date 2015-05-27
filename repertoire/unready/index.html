@@ -16,7 +16,7 @@ repertoire-tab: unready
   </thead>
   <tbody>
     {% for song in site.data.repertoire %}
-      {% if song.ready == "no" %}
+      {% if song.ready == "no" or song.lead == "Pete" %}
         <tr>
           <td>{{ song.title }}</td>
           <td>{{ song.artist }}</td>
