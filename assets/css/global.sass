@@ -1,0 +1,177 @@
+---
+---
+$lcred: #E31837
+
+html, body
+  padding: 0
+  margin: 0
+
+html
+  // Force scroll bar
+  overflow-y: scroll
+
+body
+  font-family: "nta","Helvetica Neue",Helvetica,Arial,sans-serif
+  font-size: 19px
+  line-height: 26px
+  font-weight: 400
+  color: #0b0c0c
+  background: white
+
+.header
+  background-color: #E31837
+  background-color: white
+  min-width: 1000px
+  padding: 30px 0 20px
+  border-bottom: 8px solid #E31837
+
+  .container
+    width: 980px
+    margin-right: auto
+    margin-left: auto
+    text-align: center
+
+  a
+    color: white
+    color: black
+    text-decoration: none
+    font-family: "nta","Helvetica Neue",Helvetica,Arial,sans-serif
+    font-size: 40px
+    font-weight: bold
+    z-index: 200
+    position: relative
+
+.site .container
+  width: 980px
+  margin-right: auto
+  margin-left: auto
+
+table
+  width: 100%
+
+  th
+    text-align: left
+
+.title
+  margin-bottom: 0
+  margin-top: 60px
+
+.subtitle
+  margin-top: 5px
+  margin-bottom: 40px
+  font-style: italic
+
+
+/* Table Styling */
+
+.ready-yes
+  color: green
+.ready-no
+  color: red
+
+
+/* Table Sorting  */
+
+.tablesorter-headerAsc
+.tablesorter-headerDesc
+.tablesorter-headerUnSorted
+
+
+/* Table Searching */
+
+#searchable-overlay
+  position: fixed
+  bottom: 0
+  left: 0
+  right: 0
+  text-align: center
+  padding-bottom: 20px
+  padding-top: 20px
+  background-color: #eee
+  display: none
+  input
+    font-size: 30px
+    font-family: "nta","Helvetica Neue",Helvetica,Arial,sans-serif
+    border: none
+    background-color: transparent
+    text-align: center
+    width: 100%
+
+    &:focus
+      outline: none
+
+
+/* Triangle Tests */
+
+.sign
+  width: 0
+  height: 0
+  border-left: 200px solid transparent
+  border-right: 200px solid transparent
+
+  border-bottom: 300px solid #E31837
+  position: absolute
+  margin-left: auto
+  margin-right: auto
+  left: 0
+  right: 0
+  top: -220px
+  z-index: 100
+
+  display: none
+  .inner
+    width: 0
+    height: 0
+    border-left: 182px solid transparent
+    border-right: 180px solid transparent
+
+    border-bottom: 271px solid white
+    position: relative
+    left: -181px
+    top: 19px
+
+
+/* Google Maps */
+
+.location-precis
+  position: relative
+  margin-top: 60px
+  .lp-details
+    position: absolute
+    z-index: 1000
+    left: 500px
+    top: 50px
+
+    .lp-text
+      >span
+        display: inline-block
+      .lp-name
+        background-color: rgba(255,255,255,0.7)
+        margin-top: 10px
+        padding: 10px 20px 8px
+        font-weight: bold
+        font-size: 28px
+    .lp-desc
+      margin-top: 10px
+      background-color: rgba(255,255,255,0.95)
+      padding: 12px 20px 10px
+      max-width: 350px
+      p
+        margin: 0
+      .lp-dt
+        margin-bottom: 5px
+        .lp-dt-day
+          font-weight: bold
+          color: $lcred
+        .lp-dt-date
+          margin-right: 15px
+          color: $lcred
+        .lp-dt-starts
+          margin-right: 5px
+        .lp-dt-ends
+          margin-left: 5px
+
+  .gm-style
+    // Hide bottom right Google links
+    .gmnoprint, .gm-style-cc
+      display: none
