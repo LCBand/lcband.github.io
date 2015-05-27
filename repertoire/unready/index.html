@@ -1,0 +1,28 @@
+---
+layout: base
+customScripts:
+  - /assets/js/repertoire.js
+---
+<h1 class="title">Unready Songs</h1>
+<p class="subtitle">Song's not on our public list</p>
+
+<table id="repertoire" class="sortable">
+  <thead>
+    <tr>
+      <th width="50%">Title</th>
+      <th>Artist</th>
+      <th>Lead</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for song in site.data.repertoire %}
+      {% if song.ready == "no" %}
+        <tr>
+          <td>{{ song.title }}</td>
+          <td>{{ song.artist }}</td>
+          <td>{{ song.lead }}</td>
+        </tr>
+      {% endif %}
+    {% endfor %}
+  </tbody>
+</table>

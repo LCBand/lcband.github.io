@@ -3,26 +3,24 @@ layout: base
 customScripts:
   - /assets/js/repertoire.js
 ---
-<h1 class="title">Abstract Repertoire</h1>
-<p class="subtitle">Every song that's in the works</p>
+<h1 class="title">Repertoire (With Pete)</h1>
+<p class="subtitle">Playable songs including Pete</p>
 
 <table id="repertoire" class="sortable">
   <thead>
     <tr>
       <th width="50%">Title</th>
       <th>Artist</th>
-      <th>Lead</th>
-      <th>Ready</th>
     </tr>
   </thead>
   <tbody>
     {% for song in site.data.repertoire %}
+      {% if song.ready == "yes" %}
         <tr>
           <td>{{ song.title }}</td>
           <td>{{ song.artist }}</td>
-          <td>{{ song.lead }}</td>
-          <td class="ready-{{ song.ready }}">{{ song.ready }}</td>
         </tr>
+      {% endif %}
     {% endfor %}
   </tbody>
 </table>
