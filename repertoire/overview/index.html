@@ -3,8 +3,8 @@ layout: internal-repertoire
 customScripts:
   - /assets/js/repertoire.js
 ---
-<h1 class="title">Unready Songs</h1>
-<p class="subtitle">Song's not on our public list</p>
+<h1 class="title">Full Repertoire</h1>
+<p class="subtitle">Every song on the books</p>
 
 <table id="repertoire" class="sortable">
   <thead>
@@ -12,17 +12,17 @@ customScripts:
       <th width="50%">Title</th>
       <th>Artist</th>
       <th>Lead</th>
+      <th>Ready</th>
     </tr>
   </thead>
   <tbody>
     {% for song in site.data.repertoire %}
-      {% if song.ready == "no" %}
         <tr>
           <td>{{ song.title }}</td>
           <td>{{ song.artist }}</td>
           <td>{{ song.lead }}</td>
+          <td class="ready-{{ song.ready }}">{{ song.ready }}</td>
         </tr>
-      {% endif %}
     {% endfor %}
   </tbody>
 </table>
