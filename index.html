@@ -69,11 +69,10 @@
       var $email = $('#contact .email');
       $email.focus(function() {
         if($email.is('.hot')) {
-          console.log('hot');
+          // do nothing
         } else {
           $email.val('');
           $email.addClass('hot');
-          console.log('cold');
         }
       });
 
@@ -87,18 +86,30 @@
       });
 
       $('#contact form').submit(function() {
-        $.ajax({
-          url: '//formspree.io/lc@marcuswhybrow.com',
-          method: 'POST',
-          data: {
-            _subject: 'Loose Chippings Enquiry',
-            _replyto: $('#contact form .email').val(),
-            // message: $('#contact form .message').val(),
-          },
-          dataType: 'json',
-        }).done(function() {
-          $('#contact').addClass('done');
-        });
+        if($email.is('.hot')) {
+          $.ajax({
+            url: '//formspree.io/lc@marcuswhybrow.com',
+            method: 'POST',
+            data: {
+              _subject: 'Loose Chippings Enquiry',
+              _replyto: $('#contact form .email').val(),
+              // message: $('#contact form .message').val(),
+            },
+            dataType: 'json',
+          }).done(function() {
+            $('#contact').addClass('done');
+          });
+        } else {
+          $('#contact .email')
+            .stop()
+            .animate({opacity: 0}, 200, function() {
+              $(this).animate({opacity: '1'}, 100, function() {
+                $(this).animate({opacity: '0'}, 150, function() {
+                  $(this).animate({opacity: '1'}, 100);
+                });
+              });
+            });
+        }
 
         return false;
       });
