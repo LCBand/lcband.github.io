@@ -21,6 +21,7 @@ html, body {
   width: 1000px;
   margin: 0 auto;
   padding-top: 200px;
+  overflow: hidden;
 }
 
 .hero {
