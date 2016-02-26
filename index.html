@@ -1,4 +1,67 @@
----
-layout: base
----
-<p style="text-align:center;margin-top:30px;font-style:italic"><b>We're a band</b>; who's website says only this.</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Sansita+One' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/css/global.css" media="screen" title="no title" charset="utf-8">
+
+  </head>
+  <body>
+    <div class="hero-bg">
+      <div class="hero-wrapper">
+        <div class="top">
+          <div class="hero" alt="">
+            <a class="logo" href="#"></a>
+            <p class="tag-line">Six Piece Party Band</p>
+          </div>
+          <div class="next">
+            <p class="title">Next Playing</p>
+            <p class="details">Rock Challenge Fund Raiser<br />Sat 27th Feb 7:30PM</p>
+          </div>
+        </div>
+
+        <div id="contact" class="contact">
+          <form action="http://formspree.io/lc@marcuswhybrow.com" method="POST">
+            <input class="email" type="email" name="_replyto" value="your@email.com">
+            <input class="submit" type="submit" value="Get In Touch">
+            <input type="text" name="name">
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      var blink = setInterval(function() {
+        $email.toggleClass('tick');
+      }, 2000);
+
+      var $email = $('#contact .email');
+      $email.focus(function() {
+        if($email.is('.hot')) {
+          console.log('hot');
+        } else {
+          $email.val('');
+          $email.addClass('hot');
+          console.log('cold');
+        }
+      });
+
+      $email.blur(function() {
+        if($email.val().length == 0) {
+          $email.val('your@email.com');
+          $email.removeClass('hot');
+        } else {
+
+        }
+      });
+    });
+  </script>
+</html>
