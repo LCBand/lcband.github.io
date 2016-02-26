@@ -32,6 +32,7 @@
             <input class="submit" type="submit" value="Get In Touch">
             <!-- <input class="message" type="text" name="message"> -->
           </form>
+          <p class="done-message">Thanks, we'll get in touch soon</p>
         </div>
       </div>
     </div>
@@ -74,6 +75,8 @@
             // message: $('#contact form .message').val(),
           },
           dataType: 'json',
+        }).done(function() {
+          $('#contact').addClass('done');
         });
 
         return false;
